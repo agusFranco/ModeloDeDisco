@@ -18,15 +18,13 @@ public void Disco(float radioInterior,float radioExterior) {
 	this.setRadioInt(radioInterior);
 	this.setPerimetroExt(this.calculoDelPerimetroExterior(radioExterior));
 	this.setPerimetroInt(this.calculoDelPerimetroInterior(radioInterior));
-	this.setSuperficie(radioExterior);	
+	this.setSuperficie(this.calculoDeLaSuperficie(radioExterior));	
 }
 
 
 // Calculo de Perimetros y Superficie
 
-public void setSuperficie(double superficie) {
-	this.superficie = superficie;
-}
+
 
 
 public double calculoDelPerimetroExterior(double radioParaPerimetroExterior) {
@@ -52,6 +50,10 @@ public double calculoDeLaSuperficie(double radioExteriorParaLaSuperficie) {
 
 
 //Getters and Setters
+
+public void setSuperficie(double superficie) {
+	this.superficie = superficie;
+}
 
 public void setPerimetroExt(double perimetroExt) {
 	this.perimetroExt = perimetroExt;
