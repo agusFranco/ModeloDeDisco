@@ -9,16 +9,16 @@ public class Disco {
 	private double superficie;
 
 	public Disco(double radioInterior, double radioExterior) {
-		if(radioInterior == 0 || radioExterior == 0) {
+		if (radioInterior == 0 || radioExterior == 0) {
 			throw new IllegalArgumentException("Los radios deben ser mayores a 0.");
 		}
-		
-		if(radioInterior > radioExterior) {
+
+		if (radioInterior > radioExterior) {
 			throw new IllegalArgumentException("El radio interior debe ser menor al radio exterior.");
 		}
 		
-		this.setRadioExt(radioExterior);
-		this.setRadioInt(radioInterior);
+		this.setRadioExt(radioExterior);		
+		this.setRadioInt(radioInterior);		
 	}
 
 	public double getRadioInt() {
@@ -26,6 +26,10 @@ public class Disco {
 	}
 
 	public void setRadioInt(double radioInt) {
+		if (radioInt > this.radioExt) {
+			throw new IllegalArgumentException("El radio interior debe ser menor al radio ext");
+		}
+
 		this.radioInt = radioInt;
 		this.calculoDelPerimetroInterior();
 		this.calculoDeLaSuperficie();
@@ -36,21 +40,25 @@ public class Disco {
 	}
 
 	public void setRadioExt(double radioExt) {
+		if (radioExt < this.radioInt) {
+			throw new IllegalArgumentException("El radio exterior debe ser mayor al radio ext");
+		}
+		
 		this.radioExt = radioExt;
 		this.calculoDelPerimetroExterior();
 		this.calculoDeLaSuperficie();
 	}
 
 	public double getPerimetroExt() {
-		return perimetroExt;
+		return this.perimetroExt;
 	}
 
 	public double getPerimetroInt() {
-		return perimetroInt;
+		return this.perimetroInt;
 	}
 
 	public double getSuperficie() {
-		return superficie;
+		return this.superficie;
 	}
 
 	private void calculoDelPerimetroExterior() {

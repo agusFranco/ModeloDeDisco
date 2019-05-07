@@ -45,8 +45,8 @@ public class DiscoTests {
 	@Test
 	public void seActualizaElRadioInterior() {
 		double radioInt = 2;
-		double radioExt = 3;
-		double radioIntEsperado = 4;
+		double radioExt = 4;
+		double radioIntEsperado = 3;
 
 		Disco disco = new Disco(radioInt, radioExt);
 		disco.setRadioInt(radioIntEsperado);
@@ -108,7 +108,7 @@ public class DiscoTests {
 	@Test
 	public void alAcualizarRadioIntCambiaElPerimetroInt() {
 		double radioInt = 2d;
-		double radioExt = 3d;
+		double radioExt = 6d;
 		double radioIntNuevo = 4d;
 		double perimetroInicialEsperado = 12.57d;
 		double perimetroFinalEsperado = 25.13d;
